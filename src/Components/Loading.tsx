@@ -6,7 +6,7 @@ export default function Loading() {
             <section>
                 <h1>Take your time</h1>
                 <Link to={"/SetTimer"}>
-                    <button>Next page</button>
+                    <button>Go to clock!</button>
                 </Link>
             </section>
     );
