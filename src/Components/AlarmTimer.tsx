@@ -8,7 +8,7 @@ export default function AlarmTimer() {
     
     return (
             <section>
-                <h1>Take your time</h1>
+                <h1>Alarm</h1>
                 <Link to={"/PauseTimer"}>
                     <button>Next page</button>
                 </Link>

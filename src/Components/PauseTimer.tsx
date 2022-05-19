@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useTimer from 'easytimer-react-hook';
 
 export default function PauseTimer() {
@@ -7,7 +8,10 @@ export default function PauseTimer() {
 
     return (
             <section>
-                <h1>Take your time</h1>
+                <h1>Pause</h1>
+                <Link to={"/SetTimer"}>
+                    <button>Next page</button>
+                </Link>
             </section>
     );
 }

@@ -35500,7 +35500,12 @@ function createSearchParams(init) {
     return memo.concat(Array.isArray(value) ? value.map(v => [key, v]) : [[key, value]]);
   }, []));
 }
-},{"react":"../node_modules/react/index.js","history":"../node_modules/history/index.js","react-router":"../node_modules/react-router/index.js"}],"../src/Components/Loading.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","history":"../node_modules/history/index.js","react-router":"../node_modules/react-router/index.js"}],"../src/Styles/styles.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/Components/Loading.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35517,7 +35522,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Loading() {
   return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/SetTimer"
-  }, _react.default.createElement("button", null, "Next page")));
+  }, _react.default.createElement("button", null, "Go to clock!")));
 }
 },{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js"}],"../node_modules/easytimer.js/dist/easytimer.js":[function(require,module,exports) {
 var define;
@@ -36228,9 +36233,9 @@ function SetTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Set timer"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/AnalogTimer"
-  }, _react.default.createElement("button", null, "Next page")));
+  }, _react.default.createElement("button", null, "Next page")), _react.default.createElement("h1", null, timer.getTimeValues().toString()));
 }
 },{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","easytimer-react-hook":"../node_modules/easytimer-react-hook/dist/index.min.js"}],"../src/Components/AnalogTimer.tsx":[function(require,module,exports) {
 "use strict";
@@ -36254,7 +36259,7 @@ function AnalogTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Old school clock"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/DigitalTimer"
   }, _react.default.createElement("button", null, "Next page")));
 }
@@ -36280,7 +36285,7 @@ function DigitalTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Digital clock"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/VisualTimer"
   }, _react.default.createElement("button", null, "Next page")));
 }
@@ -36306,7 +36311,7 @@ function VisualTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Visualizing"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/AlarmTimer"
   }, _react.default.createElement("button", null, "Next page")));
 }
@@ -36332,7 +36337,7 @@ function AlarmTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"), _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Alarm"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/PauseTimer"
   }, _react.default.createElement("button", null, "Next page")));
 }
@@ -36346,6 +36351,8 @@ exports.default = PauseTimer;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 var _easytimerReactHook = _interopRequireDefault(require("easytimer-react-hook"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -36356,9 +36363,11 @@ function PauseTimer() {
       isTargetAchieved = _a[1];
 
   timer.start({});
-  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Take your time"));
+  return _react.default.createElement("section", null, _react.default.createElement("h1", null, "Pause"), _react.default.createElement(_reactRouterDom.Link, {
+    to: "/SetTimer"
+  }, _react.default.createElement("button", null, "Next page")));
 }
-},{"react":"../node_modules/react/index.js","easytimer-react-hook":"../node_modules/easytimer-react-hook/dist/index.min.js"}],"../src/Components/App.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","easytimer-react-hook":"../node_modules/easytimer-react-hook/dist/index.min.js"}],"../src/Components/App.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36369,6 +36378,8 @@ exports.default = App;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _styles = _interopRequireDefault(require("../Styles/styles.scss"));
 
 var _Loading = _interopRequireDefault(require("./Loading"));
 
@@ -36388,7 +36399,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
   return _react.default.createElement("div", {
-    className: "App"
+    className: _styles.default.body
   }, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("main", null, _react.default.createElement(_reactRouterDom.Routes, null, _react.default.createElement(_reactRouterDom.Route, {
     path: "/",
     element: _react.default.createElement(_Loading.default, null)
@@ -36412,7 +36423,7 @@ function App() {
     element: _react.default.createElement(_PauseTimer.default, null)
   })))));
 }
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","./Loading":"../src/Components/Loading.tsx","./SetTimer":"../src/Components/SetTimer.tsx","./AnalogTimer":"../src/Components/AnalogTimer.tsx","./DigitalTimer":"../src/Components/DigitalTimer.tsx","./VisualTimer":"../src/Components/VisualTimer.tsx","./AlarmTimer":"../src/Components/AlarmTimer.tsx","./PauseTimer":"../src/Components/PauseTimer.tsx"}],"../src/index.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","../Styles/styles.scss":"../src/Styles/styles.scss","./Loading":"../src/Components/Loading.tsx","./SetTimer":"../src/Components/SetTimer.tsx","./AnalogTimer":"../src/Components/AnalogTimer.tsx","./DigitalTimer":"../src/Components/DigitalTimer.tsx","./VisualTimer":"../src/Components/VisualTimer.tsx","./AlarmTimer":"../src/Components/AlarmTimer.tsx","./PauseTimer":"../src/Components/PauseTimer.tsx"}],"../src/index.tsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -36456,7 +36467,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59920" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63224" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

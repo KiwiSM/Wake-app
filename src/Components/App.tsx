@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Styles from "../Styles/styles.scss";
 import Loading from './Loading';
 import SetTimer from './SetTimer';
 import AnalogTimer from './AnalogTimer';
@@ -10,7 +11,7 @@ import PauseTimer from './PauseTimer';
 
 export default function App() {
     return (
-        <div className="App">
+        <div className={Styles.body}>
           <Router>
             <main>
               <Routes>

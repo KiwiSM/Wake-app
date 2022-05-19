@@ -8,7 +8,7 @@ export default function DigitalTimer() {
 
     return (
             <section>
-                <h1>Take your time</h1>
+                <h1>Digital clock</h1>
                 <Link to={"/VisualTimer"}>
                     <button>Next page</button>
                 </Link>

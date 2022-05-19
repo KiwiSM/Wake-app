@@ -8,7 +8,7 @@ export default function AnalogTimer() {
 
     return (
             <section>
-                <h1>Take your time</h1>
+                <h1>Old school clock</h1>
                 <Link to={"/DigitalTimer"}>
                     <button>Next page</button>
                 </Link>
