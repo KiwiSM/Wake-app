@@ -1,16 +1,29 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Loading from './Loading';
+import SetTimer from './SetTimer';
+import AnalogTimer from './AnalogTimer';
+import DigitalTimer from './DigitalTimer';
+import VisualTimer from './VisualTimer';
+import AlarmTimer from './AlarmTimer';
+import PauseTimer from './PauseTimer';
+
 export default function App() {
-    return ( 
-        <article>
-            <h1>Haj</h1>
-            <ul>
-                <li>Angel Shark</li>
-                <li>Hammerhead Shark</li>
-                <li>Whale Shark</li>
-                <li>Great White Shark</li>
-                <li>Bull Shark</li>
-                <li>Test test test</li>
-            </ul>
-        </article>
-    );
-}
+    return (
+        <div className="App">
+          <Router>
+            <main>
+              <Routes>
+                <Route path="/" element={<Loading />} />
+                <Route path="/SetTimer" element={<SetTimer />} />
+                <Route path="/AnalogTimer" element={<AnalogTimer />} />
+                <Route path="/DigitalTimer" element={<DigitalTimer />} />
+                <Route path="/VisualTimer" element={<VisualTimer />} />
+                <Route path="/AlarmTimer" element={<AlarmTimer />} />
+                <Route path="/PauseTimer" element={<PauseTimer />} />
+              </Routes>
+            </main>
+          </Router>
+        </div>
+      );
+} 
